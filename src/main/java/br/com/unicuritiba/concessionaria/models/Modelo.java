@@ -19,7 +19,7 @@ public class Modelo {
 	private String nome;
 	
 	@ManyToOne
-	@JoinColumn(name = "plataforma_id", nullable = false)
+	@JoinColumn(name = "plataforma_id")
 	private Plataforma plataforma;
 	
 	private String carroceria;
@@ -29,20 +29,7 @@ public class Modelo {
 	private String motor;
 	
 	private String ano;
-
-	public Modelo(String nome,
-			String carroceria, 
-			String cambio, 
-			String motor, 
-			String ano) {
-		super();
-		this.nome = nome;
-		this.carroceria = carroceria;
-		this.cambio = cambio;
-		this.motor = motor;
-		this.ano = ano;
-	}
-
+	
 	public long getId() {
 		return id;
 	}
@@ -89,5 +76,13 @@ public class Modelo {
 
 	public void setAno(String ano) {
 		this.ano = ano;
+	}
+
+	public Plataforma getPlataforma() {
+		return plataforma;
+	}
+
+	public void setPlataforma(Plataforma plataforma) {
+		this.plataforma = plataforma;
 	}
 }

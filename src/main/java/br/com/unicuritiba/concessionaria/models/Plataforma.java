@@ -1,6 +1,6 @@
 package br.com.unicuritiba.concessionaria.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,20 +18,8 @@ public class Plataforma {
 	private String nome;
 	
 	@OneToMany(mappedBy = "plataforma")
-	private ArrayList<Modelo> modelos;
+	private List<Modelo> modelos;
 	
-	public Plataforma(String nome) {
-		super();
-		this.nome = nome;
-		this.modelos = new ArrayList<>();
-	}
-	
-	public Plataforma(String nome, ArrayList<Modelo> modelos) {
-		super();
-		this.nome = nome;
-		this.modelos = modelos;
-	}
-
 	public long getId() {
 		return id;
 	}
@@ -48,11 +36,11 @@ public class Plataforma {
 		this.nome = nome;
 	}
 
-	public ArrayList<Modelo> getModelos() {
+	public List<Modelo> getModelos() {
 		return modelos;
 	}
 
-	public void setModelos(ArrayList<Modelo> modelos) {
+	public void setModelos(List<Modelo> modelos) {
 		this.modelos = modelos;
 	}
 }
